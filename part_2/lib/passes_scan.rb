@@ -67,7 +67,6 @@ class PassesScan
       end
       colum = colum_finder(array)
       id = (rows[0] * 8) + colum[0]
-      #puts ("A passagem #{array[0]} corresponde a ROW: #{rows[0]} coluna: #{colum[0]} e ID: #{id}")
       passes_hash << {pass: array[0], row: rows[0], colum: colum[0] ,ID: id}
     end
     return passes_hash
@@ -97,7 +96,7 @@ class PassesScan
   end
 
   def id_sorter()
-    sorted_ids = @passes_arrey.sort_by! { |h| h[:ID] }
+    sorted_ids = @passes_arrey.sort_by { |hash| hash[:ID] }
     return sorted_ids
   end
   
